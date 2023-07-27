@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://kit.fontawesome.com/60ac64f9c0.js" crossorigin="anonymous"></script>
+  <style>
+
+    /* Import font */
+    @font-face {
+      src: url(./src/fonts/my-font.otf);
+      font-family: my-font;
+    }
+
+    /* Body */
+    body {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      width: 99.5%;
+      height: auto;
+      background-color: #000000;
+      background-image:
+         radial-gradient(ellipse farthest-corner at 80vw 15vh ,
+          rgba(164, 164, 164, 0.5) 5%, rgba( 250,240,128,0) 95%
+      );
+      background-attachment:fixed;
+    }
+
+    .main-black-square {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background-color: #000000;
+      filter: blur(80px);
+    }
+
+
+    .home-image-container {
+      position: sticky; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 0; 
+      overflow: hidden;
+    }
+
+    .home-image {
+      width: 100vw; 
+      height: 100vh;
+      position: sticky; 
+      top: 0;
+      left: 0;
+      z-index: -1; 
+    }
+
+    .light {
+      width: 8vw;
+      height: 12vh;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1; 
+    }
+
+    .button-container {
+      position: fixed; 
+      bottom: 0; 
+      left: 50%;
+      transform: translateX(-50%);  
+      z-index: 3;  
+      padding-bottom: 20px; 
+    }
+
+    .contact-container {
+      position: fixed; 
+      bottom: 0; 
+      left: 50%;
+      transform: translateX(-50%);  
+      z-index: 4;  
+      padding-bottom: 20px; 
+    }
+
+    .first-page {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 100vh;
+      z-index: 2;
+    }
+
+    .rectangle-contact {
+      width: 6vw;
+      height: 25vh;
+      background-color: rgba( 255,255, 255, 0.1); 
+      color:white;
+      display:inline-block;
+      border-radius: 15px;
+      padding: 10px;
+      transform: translate(-750%, 10%);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+    
+    
+    .text-center {
+      position: absolute;
+      top: 18vh;
+      left: 15vw;
+      text-align: left;
+      font-size: 1.6vw;
+      font-family: my-font;
+      color: white;
+    }
+
+    .text-name {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60vw;
+      text-align: left;
+      font-size: 5.4vw;
+      font-weight: bold;
+      font-family: my-font;
+      color: #ffffff;
+      transform: translate(14.6vw, 16vh);
+    }
+    
+    .text-present {
+      position: absolute;
+      top: 38vh;
+      left: 15vw; 
+      width: 45vw;
+      text-align: left;
+      font-size: 1.5vw;
+      font-family: my-font;
+      color: #ffffff;
+    }
+
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #656565;
+      border-radius: 10px;
+    }
+
+    * {
+      scrollbar-width: thin; /* "thin" pour une scrollbar plus fine */
+      scrollbar-color: #888 #f1f1f1;
+    }
+
+    .btn-journey {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 15vw;
+      height: 8vh;
+      background-color: rgba( 255,255, 255, 0.1); 
+      color:rgba(255, 255, 255, 0.743);
+      display:inline-block;
+      font-size: 1.1vw;
+      border-radius: 15px;
+      padding: 10px;
+      font-family: my-font;
+      font-weight: bold;
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-journey:focus {
+      outline: none;
+    }
+
+    /* Slide effect */
+
+    .slide {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -5vw;
+      width: 130vw;
+      height: 100vh;
+      background-color: rgba( 255,255, 255, 0.1); 
+      transform: translate(-110%, 0) skew(-30deg);
+      transition: 0.5s;
+    }
+
+    .slide:hover .text {
+      color: #fff;
+    }
+
+    .slide:hover::before {
+      transform: translate(-5%, 0) skew(-15deg);
+    }
+
+    /* Silde */
+
+    /* White Square */
+
+    .white-square {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 100vh;
+      z-index: 2;
+    }
+    
+    .img-me {
+      width: 24vw;
+      height: auto;
+      border-radius: 30px;
+      margin-left: 8vw;
+      margin-top: 13vh;
+      object-fit: cover;
+    }
+
+    .text-about {
+      top: 0;
+      left: 0;
+      width: 65vw;
+      font-size: 2.2vw;
+      text-align: left;
+      font-weight: bold;
+      font-family: my-font;
+      color: #ffffff;
+      transform: translate(33vw, -72vh);
+    }
+
+    .text-select {
+      background: #ffffff;
+      color: #000000;
+    }
+
+  
+    /* White Square */
+
+    /* White second Square */
+
+    .white-second-square {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 100vh;
+      z-index: 2;
+    }
+
+    .img-epitech {
+      float: right;
+      width: 24vw;
+      height: auto;
+      border-radius: 30px;
+      align-items: right;
+      margin-top: 13vh;
+      margin-right: 8vw;
+      object-fit: cover;
+    }
+  
+    
+    .square-epitech {
+      float: right;
+      width: 55vw;
+      height: 53vh;
+      background-color: rgba( 255,255, 255, 0.1); 
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 24vh;
+      margin-right: -3vw;
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+    }
+
+    .text-epitech {
+      width: 50vw;
+      text-align: center;
+      font-size: 1.7vw;
+      font-weight: bold;
+      font-family: my-font;
+      color: #ffffff;
+      text-align: left;
+      margin-left: 1vw;
+    }
+
+    /* White second Square */
+
+    /* Project Square */
+
+    .project-square {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 34vh;
+      z-index: 2;
+    }
+
+    .allProject {
+      width: 35vw;
+      height: 27vw;
+      background-color: rgba( 255,255, 255, 0.1); 
+      border-radius: 15px;
+      padding: 10px;
+      transform: translate(0vw, 0vh);
+      margin-left: 4vw;
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+    }
+
+    .testableProject {
+      width: 53vw;
+      height: 27vw;
+      background-color: rgba( 255,255, 255, 0.1); 
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 0vh;
+      margin-left: 2.5vw;
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+      position: relative;
+      transition: 0.3s;
+      box-shadow: none;
+    }
+  
+    .allProject:hover {
+      transition: 0.3s;
+      box-shadow: 0 5px 12px rgba(146, 146, 146, 0.8);
+    }
+
+    .allProject:not(:hover) {
+      transition: 0.3s;
+      box-shadow: none;
+    }
+
+    .text-project::after {
+      content: "";
+      position: absolute;
+      border-bottom: 2px solid rgba(146, 146, 146, 0.8);
+      width: 0;
+      transition: width 0.5s ease;
+      left: 0;
+      bottom: 0;
+    }
+
+    .allProject:hover .text-project::after {
+      width: 100%;
+    }
+
+    .testableProject:hover .text-project::after {
+      width: 100%;
+    }
+
+    .allProject:hover::after {
+      .img-term {
+        transition: 0.3s;
+        background-color: #000000;
+      }
+    }
+
+    .allProject:hover {
+      transition: 0.3s;
+      box-shadow: 0 5px 12px rgba(146, 146, 146, 0.8);
+      .img-project {
+        transition: 0.3s;
+        transform: translate(0vw, -3vh);
+        filter: opacity(1);
+      }
+    }
+
+    .testableProject:hover {
+      transition: 0.3s;
+      box-shadow: 0 5px 12px rgba(146, 146, 146, 0.8);
+      .img-term {
+        transition: 0.3s;
+        transform: translate(0vw, -3vh);
+        filter: opacity(1);
+      }
+    }
+
+    .testableProject:mouseout {
+      transform: translate(0vw, 100vh);
+    }
+
+    .testableProject:hover::after {
+      .img-term {
+        transition: 0.3s;
+        background-color: #000000;
+      }
+    }
+
+    .text-project {
+      font-size: 2.3vw;
+      margin-left: 1vw;
+      position: absolute;
+      top: 0;
+      text-align: left; 
+      font-weight: bold;
+      font-family: my-font;
+      color: rgba(207, 206, 206, 0.8);
+      filter: opacity(0.9);
+      text-decoration: none;
+      transition: text-decoration 0.5s ease;
+    }
+
+    .img-term {
+      width: 48vw;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 10vw;
+      margin-top: 18vh;
+      filter: opacity(0.5);
+      object-fit: cover;
+    }
+
+    .img-project {
+      width: 29vw;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 10vw;
+      margin-top: 18vh;
+      filter: opacity(0.5);
+      object-fit: cover;
+    }
+
+    .img-project:hover {
+      transition: 0.3s;
+      filter: opacity(1);
+    }
+
+    .img-term:hover {
+      transition: 0.3s;
+      filter: opacity(1);
+    }
+
+    .img-used {
+      width: 26vw;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 1vw;
+      margin-top: 0.9vh;
+      object-fit: cover;
+    } 
+
+    /* Project Square */
+    /* White thirds Square */
+    
+    .white-third-square {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 100vh;
+      z-index: 2;
+    }
+
+    .img-cv {
+      float: right;
+      width: 24vw;
+      height: auto;
+      border-radius: 30px;
+      margin-top: -44vh;
+      margin-right: 5vw;
+      object-fit: cover;
+    }
+
+    .social-square {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 98.6%;
+      height: 10vh;
+      background-color: rgba( 255,255, 255, 0.1); 
+      border-radius: 15px 15px 0px 0px;
+      padding: 10px;
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+    }
+
+    .end-page {
+      position: absolute;
+      left : 0;
+      bottom: 0;
+      width: 100%;
+      height: 5vw;
+      background-color: rgba( 255,255, 255, 0.1); 
+      border-radius: 15px 15px 0px 0px;
+      padding: 10px;
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10vw;
+      height: 4.5vw;
+      font-size: 2vw;
+      margin-left: 1.5vw;
+      margin-top: 0.9vh;
+      background-color: rgba( 255,255, 255, 0.1); 
+      display:inline-block;
+      border-radius: 15px;
+      border: none;
+    }
+
+    .btn-social:hover {
+      transition: 0.3s;
+      box-shadow: 0 3px 6px rgba(146, 146, 146, 0.8);
+    }
+
+    .text-futur {
+      width: 62vw;
+      font-size: 2vw;
+      text-align: left;
+      font-weight: bold;
+      font-family: my-font;
+      color: #ffffff;
+      margin-top: 35vh;
+      margin-left: 5vw;
+    }
+
+    .btn-dwl {
+      float: right;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 15vw;
+      height: 8vh;
+      background-color: rgba( 255,255, 255, 0.1); 
+      color:rgba(255, 255, 255, 0.743);
+      font-size: 1.1vw;
+      margin-top: 23vh;
+      margin-right: -19.5vw;
+      border-radius: 15px;
+      padding: 10px;
+      font-family: my-font;
+      font-weight: bold;
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+    }
+
+    .text-social {
+      top: 0;
+      right: 0;
+      font-size: 1.5vw;
+      font-family: my-font;
+      font-weight: bold;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .square-used {
+      width: 28vw;
+      height: 11.7vw;
+      background-color: rgba( 255,255, 255, 0.1); 
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 100vh;
+      margin-left: 2.5vw;
+      overflow: hidden;
+      border: none;
+      transform: translate(2.3vw, -33vh);
+      backdrop-filter: blur(10px);
+    }
+    /* White thirds Square */
+
+
+    @media screen and (width: 1920px ) and (height: 1080px) {
+      .text-pos {
+        transform: translate(33vw, -34vh);
+      }
+    }
+    @media screen and (min-width: 320px ) and (min-height: 1080px) {
+      .text-name {
+        transform: translate(0vw, -4.5vh);
+      }
+      .text-present {
+        transform: translate(0vw, -16vh);
+      }
+      .btn-journey {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 28vw;
+        height: 3vh;
+        background-color: rgba( 255,255, 255, 0.1); 
+        color:rgba(255, 255, 255, 0.743);
+        display:inline-block;
+        font-size: 1.1vw;
+        border-radius: 15px;
+        padding: 10px;
+        font-family: my-font;
+        font-weight: bold;
+        overflow: hidden;
+        border: none;
+        backdrop-filter: blur(10px);
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+  <div class="main-black-square">
+    <div class="home-image-container">
+      <div class="light"></div>
+      <img src="./src/img/background.png" class="home-image">
+    </div>
+  </div>
+
+  <div class="first-page">
+    <h2 class="text-center">Hi, my name is</h2>
+    <h2 class="text-name">Félix Schrynemaekers.</h2>
+    <h2 class="text-present">I'm an 19-year-old, student at the Epitech Technology IT school.</h2>
+    <button id="btnjourney" class="btn-journey slide" style="transform: translate(15vw, 50vh);">About me ?</button>
+  </div>
+
+  <div class="white-square">
+    <img src="./src/img/me.jpg" class="img-me">
+    <h2 class="text-about text-pos"><span class="text-select"> since I was young,</span> I've had an unwavering passion for computers and new technologies.<br><br> At first, <span class="text-select">this passion</span> was expressed through video games, but as time went by, I felt the <span class="text-select">need to </span>contribute to their improvement by adding what I felt was missing.<br><br> So I started learning computer languages, and was <span class="text-select">immediately hooked.</span><br> It was then that I knew I wanted to turn this passion<br> into a career.</h2>
+  </div>
+
+  <div class="white-second-square">
+    <img src="./src/img/epitech.png" class="img-epitech">
+    <div class="square-epitech">
+      <h2 class="text-epitech"><span class="text-select">I discovered Epitech</span> because I was looking for a school with a focus on IT and, above all, IT diversity.<br><br> Epitech really appealed to me because it's not part of the classical education system, and allows <span class="text-select">a certain freedom</span> and <span class="text-select">more mature management</span> of one's work schedule.<br><br> <span class="text-select">As a second-year student,</span> I loved my first year and the fact that Epitech doesn't just train you in a programming language, but also in a way of thinking, which makes it easier for you to <span class="text-select">learn other languages.</span></h2>
+    </div>
+    <button id="btnFuture" class="btn-journey slide" style="transform: translate(-68.5vw, -5.5vh);">My Future ?</button>
+  </div>
+
+  <div class="project-square">
+    <button id="allproject" class="allProject">
+      <h2 class="text-project" style="width: 12.5vw;">All Projects</h2>
+      <img src="./src/img/navy.png" class="img-project" style="width: 40vw; margin-left: 5vw; margin-top: 17vh;">
+    </button>
+    <button id="btn-testable" class="testableProject">
+      <h2 id="testable" class="text-project" style="width: 19vw;">Testable Projects</h2>
+      <img src="./src/img/project.png" class="img-term" style="width: 40vw; margin-left: 13vw; margin-top: 17vh;">
+    </button>
+    <div class="square-used">
+      <img src="./src/img/mostused.png" class="img-used">
+    </div>
+  </div>
+
+  <div class="white-third-square">
+    <h2 class="text-futur"><span class="text-select">During my school career,</span> I intend to carry out various projects involving languages and themes that are new to me.<br><br> This will give me <span class="text-select">a better understanding</span> of my preferences for the future.<br><br> At the moment, <span class="text-select">JavaScript</span> is the language that fascinates me most, and I'm also <span class="text-select">drawn to the web.</span></h2>
+    <img src="./src/img/CV.jpeg" class="img-cv">
+    <button id="dwlcv" class="btn-dwl slide">Download</button>
+    <div class="social-square">
+      <button id ="btnlinkedin" class="btn-social">
+        <span class="text-social">
+          <i class="fa-brands fa-linkedin"></i>
+          Linkedin
+        </span>
+      </button>
+      <button id="btngithub" class="btn-social">
+        <span class="text-social">
+          <i class="fa-brands fa-github"></i>
+          Github
+        </span>
+      </button>
+      <button id="btnemail" class="btn-social">
+        <span class="text-social">
+          <i class="fa-solid fa-envelope"></i>
+          Email
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script>
+    
+    window.addEventListener('DOMContentLoaded', function() {
+      var scrollButtons = document.querySelectorAll('.btn-journey');
+    
+      scrollButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          window.scrollBy({
+            top: window.innerHeight,
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+
+
+    document.addEventListener("mousemove", (e) => {
+      const light = document.querySelector(".light");
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      light.style.display = "block"; 
+      light.style.left = mouseX + "px";
+      light.style.top = mouseY + "px";
+    });
+
+    document.getElementById("dwlcv").addEventListener("click", function() {
+      downloadJPEG();
+    });
+
+    function downloadJPEG() {
+      const fileURL = "./src/img/CV.jpeg";
+    
+      const a = document.createElement("a");
+      a.href = fileURL;
+      a.download = "Felix-Schrynemaekers-CV.jpeg";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+    
+    var linkedinButton = document.getElementById("btnlinkedin");
+    linkedinButton.addEventListener("click", redirectToLinkedin);
+    
+    var githubButton = document.getElementById("btngithub");
+    githubButton.addEventListener("click", redirectToGitHub);
+
+    document.getElementById("btn-testable").addEventListener("click", function() {
+      window.location.href = "testable.html";
+    });
+
+    document.getElementById("allproject").addEventListener("click", function() {
+      window.location.href = "all-project.html"
+    });
+
+    function redirectToLinkedin() {
+      window.open("https://www.linkedin.com/in/félix-schrynemaekers-7ba783267/", "_blank");
+    }
+
+    function redirectToGitHub() {
+      window.open("https://github.com/felixlvu", "_blank");
+    }
+    document.getElementById("btnemail").addEventListener("click", function() {
+    const destinataire = "felixschryne@hotmail.com";
+
+    const mailtoURL = `mailto:${destinataire}`;
+      window.location.href = mailtoURL;
+    });
+
+  </script>
+</body>
+</html>
