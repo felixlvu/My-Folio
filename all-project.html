@@ -159,7 +159,9 @@
       border: none;
       backdrop-filter: blur(10px);
       display: inline-block;
-
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .arrow-back {
@@ -276,6 +278,18 @@
       transition: text-decoration 0.5s ease;
     }
 
+    .title-project {
+      font-size: 2.3vw;
+      position: absolute;
+      width: auto;
+      font-weight: bold;
+      font-family: my-font;
+      color: rgba(207, 206, 206, 0.8);
+      filter: opacity(0.9);
+      text-decoration: none;
+      transition: text-decoration 0.5s ease;
+    }
+
     .img-term {
       width: 48vw;
       height: auto;
@@ -294,6 +308,9 @@
       margin-top: 18vh;
       filter: opacity(0.5);
       object-fit: cover;
+      width: 40vw; 
+      margin-left: 5vw; 
+      margin-top: 17vh;
     }
 
     .img-project:hover {
@@ -327,47 +344,40 @@
 
     /* Project Square */
 
-
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg); 
-      }
-      100% {
-        transform: rotate(360deg); 
-      }
-    }
-
-    @media screen and (width: 1920px ) and (height: 1080px) {
-      .text-pos {
-        transform: translate(33vw, -34vh);
-      }
-    }
-    @media screen and (min-width: 320px ) and (min-height: 1080px) {
-      .text-name {
-        transform: translate(0vw, -4.5vh);
-      }
-      .text-present {
-        transform: translate(0vw, -16vh);
-      }
-      .btn-journey {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 28vw;
-        height: 3vh;
-        background-color: rgba( 255,255, 255, 0.1); 
-        color:rgba(255, 255, 255, 0.743);
-        display:inline-block;
-        font-size: 1.1vw;
-        border-radius: 15px;
-        padding: 10px;
-        font-family: my-font;
-        font-weight: bold;
-        overflow: hidden;
-        border: none;
-        backdrop-filter: blur(10px);
+    @media (max-width: 768px) {
+      .title-project {
+        font-size: 7.3vw;
       }
 
+      .btn-back {
+        width: 20vw;
+        height: auto;
+      }
+
+      .bar-top {
+        width: 62vw;
+        margin-left: 3vw;
+      }
+
+      .img-term {
+        width: 48vw;
+        height: auto;
+        border-radius: 10px;
+        margin-left: 5vw;
+        margin-top: 3vh;
+        filter: opacity(0.5);
+        object-fit: cover;
+      }
+
+      .img-project {
+        width: 37vw;
+        height: auto;
+        border-radius: 10px;
+        margin-left: 4.5vw;
+        margin-top: 3.5vh;
+        filter: opacity(0.5);
+        object-fit: cover;
+      }
     }
 
   </style>
@@ -387,14 +397,14 @@
         <i class="fa-solid fa-arrow-left fa-2xl arrow-back" style="transform: translate(-0.1vw, 0vh);"></i>
       </button>
       <div class="bar-top">
-        <h2 class="text-project" style="transform: translate(32vw, -2vh);">All Projects</h2>
+        <h2 class="title-project">All Projects</h2>
       </div>
     </div>
     <button id="btnrpg" class="small-square" style="margin-left: 4vw;">
       <h2 class="text-project" style="width: auto; text-align: left;">My-RPG</h2>
-      <img src="./src/img/rpg.jpg" class="img-project" style="width: 40vw; margin-left: 5vw; margin-top: 17vh;">
+      <img src="./src/img/rpg.jpg" class="img-project">
     </button>
-    <button id="btnepy" class="big-square" style="margin-left: 2.5vw;">
+    <button id="btnepy" class="big-square" style="margin-left: 2.5vw; margin-left: 0.;">
       <h2 id="testable" class="text-project" style="text-align: left;">My-Epytodo</h2>
       <img src="./src/img/epytodo.png" class="img-term">
     </button>
@@ -404,11 +414,11 @@
     </button>
     <button id="btnsnap" class="small-square" style="margin-left: 2.5vw;">
         <h2 class="text-project" style="text-align: left;">My-Snapchat</h2>
-        <img src="./src/img/snapchat.png" class="img-project" style="width: 40vw; margin-left: 5vw; margin-top: 17vh;">
+        <img src="./src/img/snapchat.png" class="img-project">
       </button>
     <button id="btnapi" class="small-square" style="margin-left: 4vw; margin-bottom: 4vh;">
       <h2 class="text-project" style="width: auto; text-align: left;">My-API</h2>
-      <img src="./src/img/api.png" class="img-project" style="width: 40vw; margin-left: 5vw; margin-top: 17vh;">
+      <img src="./src/img/api.png" class="img-project">
     </button>
     <button id="btnnavy" class="big-square" style="margin-left: 2.5vw; margin-top: 4vh;">
       <h2 id="testable" class="text-project" style="text-align: left;">My-Navy</h2>
