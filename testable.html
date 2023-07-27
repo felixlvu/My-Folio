@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://kit.fontawesome.com/60ac64f9c0.js" crossorigin="anonymous"></script>
+  <style>
+
+    /* Import font */
+    @font-face {
+      src: url(./src/fonts/my-font.otf);
+      font-family: my-font;
+    }
+
+    /* Body */
+    body {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      width: 99.5%;
+      height: auto;
+      background-color: #000000;
+      background-image:
+         radial-gradient(ellipse farthest-corner at 80vw 15vh ,
+          rgba(164, 164, 164, 0.5) 5%, rgba( 250,240,128,0) 95%
+      );
+      background-attachment:fixed;
+    }
+
+    .main-black-square {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background-color: #000000;
+      filter: blur(80px);
+    }
+
+
+    .home-image-container {
+      position: sticky; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 0; 
+      overflow: hidden;
+    }
+
+    .home-image {
+      width: 100vw; 
+      height: 100vh;
+      position: sticky; 
+      top: 0;
+      left: 0;
+      z-index: -1; 
+    }
+
+    .light {
+      width: 8vw;
+      height: 12vh;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1; 
+    }
+
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #656565;
+      border-radius: 10px;
+    }
+
+    * {
+      scrollbar-width: thin; /* "thin" pour une scrollbar plus fine */
+      scrollbar-color: #888 #f1f1f1;
+    }
+
+    /* Slide effect */
+
+    .slide {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -5vw;
+      width: 130vw;
+      height: 100vh;
+      background-color: rgba( 255,255, 255, 0.1); 
+      transform: translate(-110%, 0) skew(-30deg);
+      transition: 0.5s;
+    }
+
+    .slide:hover .text {
+      color: #fff;
+    }
+
+    .slide:hover::before {
+      transform: translate(-5%, 0) skew(-15deg);
+    }
+
+    /* Silde */
+
+    /* bar */
+
+    .bar-container {
+      display: flex;
+    }
+
+    .btn-back {
+      width: 10vw;
+      height: 8.5vh;
+      background-color: rgba( 255,255, 255, 0.1); 
+      margin-top: 5vh;
+      border-radius: 15px;
+      padding: 10px;
+      transform: translate(0vw, 0vh);
+      overflow: hidden;
+      border: none;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      display: inline-block;
+    }
+
+    .btn-back:hover {
+      transition: 0.3s;
+      box-shadow: 0 5px 4px rgba(105, 105, 105, 0.8);
+    }
+
+    .bar-top {
+      width: 78.7vw;
+      height: 6vh;
+      background-color: rgba( 255,255, 255, 0.1);
+      margin-top: 5vh;
+      margin-left: 1vw;
+      border-radius: 15px;
+      padding: 10px;
+      transform: translate(0vw, 0vh);
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+      display: inline-block;
+
+    }
+
+    .arrow-back {
+      color:rgba(255, 255, 255, 0.743);
+    }
+
+      /* bar */
+
+    /* Project Square */
+
+    .project-square {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 34vh;
+      z-index: 2;
+    }
+
+    .small-square {
+      width: 35vw;
+      height: 27vw;
+      background-color: rgba( 255,255, 255, 0.1); 
+      border-radius: 15px;
+      padding: 10px;
+      transform: translate(0vw, 0vh);
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+    }
+  
+    .small-square:hover {
+      transition: 0.3s;
+      box-shadow: 0 5px 12px rgba(146, 146, 146, 0.8);
+    }
+
+    .small-square:not(:hover) {
+      transition: 0.3s;
+      box-shadow: none;
+    }
+
+    .small-square:hover .text-project::after {
+      width: 100%;
+    }
+
+    .small-square:hover::after {
+      .img-term {
+        transition: 0.3s;
+        background-color: #000000;
+      }
+    }
+
+    .small-square:hover {
+      transition: 0.3s;
+      box-shadow: 0 5px 12px rgba(146, 146, 146, 0.8);
+      .img-project {
+        transition: 0.3s;
+        transform: translate(0vw, -3vh);
+        filter: opacity(1);
+      }
+    }
+
+    .big-square {
+      width: 53vw;
+      height: 27vw;
+      background-color: rgba( 255,255, 255, 0.1); 
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 8vh;
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+      position: relative;
+      transition: 0.3s;
+      box-shadow: none;
+    }
+
+    .big-square:hover .text-project::after {
+      width: 100%;
+    }
+
+    .big-square:hover {
+      transition: 0.3s;
+      box-shadow: 0 5px 12px rgba(146, 146, 146, 0.8);
+      .img-term {
+        transition: 0.3s;
+        transform: translate(0vw, -3vh);
+        filter: opacity(1);
+      }
+    }
+
+    .big-square:mouseout {
+      transform: translate(0vw, 100vh);
+    }
+
+    .big-square:hover::after {
+      .img-term {
+        transition: 0.3s;
+        background-color: #000000;
+      }
+    }
+
+    .text-project {
+      font-size: 2.3vw;
+      margin-left: 1vw;
+      position: absolute;
+      top: 0;
+      font-weight: bold;
+      font-family: my-font;
+      color: rgba(207, 206, 206, 0.8);
+      filter: opacity(0.9);
+      text-decoration: none;
+      transition: text-decoration 0.5s ease;
+    }
+
+    .img-term {
+      width: 48vw;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 10vw;
+      margin-top: 18vh;
+      filter: opacity(0.5);
+      object-fit: cover;
+    }
+
+    .img-project {
+      width: 29vw;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 10vw;
+      margin-top: 18vh;
+      filter: opacity(0.5);
+      object-fit: cover;
+    }
+
+    .img-project:hover {
+      transition: 0.3s;
+      filter: opacity(1);
+    }
+
+    .img-term:hover {
+      transition: 0.3s;
+      filter: opacity(1);
+    }
+
+    .img-used {
+      width: 26vw;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 1vw;
+      margin-top: 0.9vh;
+      object-fit: cover;
+    } 
+
+    .text-project::after {
+      content: "";
+      position: absolute;
+      border-bottom: 2px solid rgba(146, 146, 146, 0.8);
+      width: 0;
+      transition: width 0.5s ease;
+      left: 0;
+      bottom: 0;
+    }
+
+    /* Project Square */
+
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg); 
+      }
+      100% {
+        transform: rotate(360deg); 
+      }
+    }
+
+    @media screen and (width: 1920px ) and (height: 1080px) {
+      .text-pos {
+        transform: translate(33vw, -34vh);
+      }
+    }
+    @media screen and (min-width: 320px ) and (min-height: 1080px) {
+      .text-name {
+        transform: translate(0vw, -4.5vh);
+      }
+      .text-present {
+        transform: translate(0vw, -16vh);
+      }
+      .btn-journey {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 28vw;
+        height: 3vh;
+        background-color: rgba( 255,255, 255, 0.1); 
+        color:rgba(255, 255, 255, 0.743);
+        display:inline-block;
+        font-size: 1.1vw;
+        border-radius: 15px;
+        padding: 10px;
+        font-family: my-font;
+        font-weight: bold;
+        overflow: hidden;
+        border: none;
+        backdrop-filter: blur(10px);
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+  <div class="main-black-square">
+    <div class="home-image-container">
+      <div class="light"></div>
+      <img src="./src/img/background.png" class="home-image">
+    </div>
+  </div>
+
+  
+  <div class="project-square">
+    <div class="bar-container">
+      <button id="back-arrow" class="btn-back" style="margin-left: 4vw;">
+        <i class="fa-solid fa-arrow-left fa-2xl arrow-back" style="transform: translate(-0.1vw, 0vh);"></i>
+      </button>
+      <div class="bar-top">
+        <h2 class="text-project" style="transform: translate(28vw, -2vh);">Testable Projects</h2>
+      </div>
+    </div>
+    <button id="btn42sh" class="small-square" style="margin-left: 4vw;">
+      <h2 class="text-project" style="width: 6.5vw; text-align: left;">42SH</h2>
+      <img src="./src/img/42sh.png" class="img-project">
+    </button>
+    <button id="btnbsq" class="big-square" style="margin-left: 2.5vw;">
+      <h2 id="testable" class="text-project" style="width: 6vw; text-align: left;">BSQ</h2>
+      <img src="./src/img/bsq.png" class="img-term">
+    </button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script>
+
+
+    document.addEventListener("mousemove", (e) => {
+      const light = document.querySelector(".light");
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      light.style.display = "block"; 
+      light.style.left = mouseX + "px";
+      light.style.top = mouseY + "px";
+    });
+
+    document.getElementById("back-arrow").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+
+    document.getElementById("btn42sh").addEventListener("click", () => {
+      window.location.href = "project-42sh.html";
+    });
+
+    document.getElementById("btnbsq").addEventListener("click", () => {
+      window.location.href = "project-bsq.html"
+    });
+
+  </script>
+</body>
+</html>
