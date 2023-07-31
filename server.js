@@ -9,6 +9,9 @@
 
     // Routes
 
+    // Routes bsq to execute bsq from my site folio
+    // return the value of progame 42sh
+
     app.get('/run-bsq', (req, res) => {
         const parsedUrl = url.parse(req.url, true);
         const query = parsedUrl.query;
@@ -35,6 +38,9 @@
             });
         }
     });
+
+    // Routes bsq to execute bsq from my site folio
+    // return the value of progame gen bsq
 
     app.get('/gen-bsq', (req, res) => {
         const parsedUrl = url.parse(req.url, true);
@@ -65,6 +71,9 @@
             }
         }); 
     });
+
+    // Routes bsq to execute 42sh from my site folio
+    // return the value of progame 42sh
 
     app.get('/run-42sh', (req, res) => {
         const parsedUrl = url.parse(req.url, true);
@@ -102,6 +111,7 @@
     });
 
     // Server
+    // Server Listen on port 3000
 
     app.listen(3000, () => {
         console.log("Serveur à l'écoute");
