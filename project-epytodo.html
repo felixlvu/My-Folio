@@ -118,8 +118,8 @@
     }
 
     .bar-help {
-      width: 21vw;
-      height: 6vh;  
+      width: 21.5vw;
+      height: 6.4vh;  
       background-color: rgba( 255,255, 255, 0.1);
       border-radius: 15px;
       padding: 10px;
@@ -194,7 +194,9 @@
       border: none;
       backdrop-filter: blur(10px);
       display: inline-block;
-
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .arrow-back {
@@ -218,10 +220,22 @@
       z-index: 3;
     }
 
+    .title-project {
+      font-size: 2.3vw;
+      position: absolute;
+      width: auto;
+      font-weight: bold;
+      font-family: my-font;
+      color: rgba(207, 206, 206, 0.8);
+      filter: opacity(0.9);
+      text-decoration: none;
+      transition: text-decoration 0.5s ease;
+    }
+
     .text-about {
       top: 0;
       left: 0;
-      font-size: 1.5vw;
+      font-size: 1.85vw;
       text-align: left;
       margin-left: 4vw;
       margin-top: 12vh;
@@ -280,14 +294,13 @@
       <i class="fa-solid fa-arrow-left fa-2xl arrow-back" style="transform: translate(-0.1vw, 0vh);"></i>
     </button>
     <div class="bar-top">
-      <h2 class="text-project" style="transform: translate(32vw, -2vh);">Epytodo</h2>
+      <h2 class="title-project">Epytodo</h2>
     </div>
   </div>
 
-  <dic class="text-container">
-    <h2 id="testo" class="text-about" style="width: 45vw;"><span class="text-select">The aim of this project</span> was to recreate a Linux terminal.<br> We had to reproduce <span class="text-select">basic commands</span> such as "ls", "cd", "cat", "echo" and so on.<br> The project was carried out <span class="text-select">in collaboration</span> with two other people.<br><span class="text-select"> You can execute complex commands</span> such as<br> "echo test > text.txt". You can also use the following special characters: "|"&nbsp; "||"&nbsp; "&"&nbsp; "&&"&nbsp; "alias"&nbsp; ">>"&nbsp; ">"&nbsp; and ";"</h2>
-    <h2 class="text-about" style="width: 45vw; margin-top: 8vh;"> To use the 42sh project, use the "run" command first. Then you can use any command you like, just like on Linux. For complex commands such as echo > text.txt ,use "" as follows: "echo > text.txt".</h2>
-  </dic>
+  <div class="text-container">
+    <h2 class="text-about" style="width: 44vw;">The aim of this project was to <span class="text-select">create a site</span> using <span class="text-select">JavaScript</span> for the first time.<br><br> This <span class="text-select">non-graphical</span> site had a user database.<br> We needed to be able to <span class="text-select">register on the site,</span> log in, see the list of other users and their <span class="text-select">associated tasks,</span> and associate tasks with people if we had permission.<br><br> We had to use <span class="text-select">MySQL for the database</span> and postman to test our site.</h2>
+  </div>
   
   <img src="./src/img/epytodo.png" class="terminal-opt">
 
@@ -308,11 +321,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script>
     document.getElementById("back-arrow").addEventListener("click", function() {
-      window.location.href = "testable.html";
+      window.location.href = "all-project.html";
     });
 
     document.getElementById("githubButton").addEventListener("click", function() {
-      window.open("https://github.com/felixlvu/EPITECH-42sh");
+      window.open("https://github.com/felixlvu/EPITECH-epytodo");
     });
 
     let show = false;
