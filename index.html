@@ -115,12 +115,13 @@
     
     .text-center {
       position: absolute;
-      top: 18vh;
-      left: 15vw;
+      top: 0vh;
+      left: 0vw;
       text-align: left;
       font-size: 1.6vw;
       font-family: my-font;
       color: white;
+      transform: translate(15vw, 18vh);
     }
 
     .text-name {
@@ -183,6 +184,27 @@
       overflow: hidden;
       border: none;
       backdrop-filter: blur(10px);
+      transform: translate(15vw, 50vh);
+    }
+
+    .btn-future {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 15vw;
+      height: 8vh;
+      background-color: rgba( 255,255, 255, 0.1); 
+      color:rgba(255, 255, 255, 0.743);
+      display:inline-block;
+      font-size: 1.1vw;
+      border-radius: 15px;
+      padding: 10px;
+      font-family: my-font;
+      font-weight: bold;
+      overflow: hidden;
+      border: none;
+      backdrop-filter: blur(10px);
+      transform: translate(-68.5vw, -5.5vh);
     }
 
     .btn-journey:focus {
@@ -602,30 +624,36 @@
         transform: translate(33vw, -34vh);
       }
     }
-    @media screen and (min-width: 320px ) and (min-height: 1080px) {
+
+    /* Phone */
+
+    @media screen and (max-width: 480px) {
       .text-name {
-        transform: translate(0vw, -4.5vh);
+        transform: translate(14.6vw, 17vh);
+        font-size: 6vw;
+        width: auto;
       }
       .text-present {
         transform: translate(0vw, -16vh);
+        font-size: 2.7vw;
+        width: 50vw;
+      }
+      .text-center {
+      transform: translate(15vw, 15.8vh);
+        font-size: 3.4vw;
+        width: 50vw;
       }
       .btn-journey {
         position: relative;
         top: 0;
         left: 0;
-        width: 28vw;
+        width: 21vw;
         height: 3vh;
-        background-color: rgba( 255,255, 255, 0.1); 
-        color:rgba(255, 255, 255, 0.743);
-        display:inline-block;
         font-size: 1.1vw;
-        border-radius: 15px;
+        border-radius: 10px;
         padding: 10px;
-        font-family: my-font;
-        font-weight: bold;
-        overflow: hidden;
-        border: none;
         backdrop-filter: blur(10px);
+        transform: translate(15vw, 28vh);
       }
 
     }
@@ -644,7 +672,7 @@
     <h2 class="text-center">Hi, my name is</h2>
     <h2 class="text-name">Félix Schrynemaekers.</h2>
     <h2 class="text-present">I'm an 19-year-old, student at the Epitech Technology IT school.</h2>
-    <button id="btnjourney" class="btn-journey slide" style="transform: translate(15vw, 50vh);">About me ?</button>
+    <button id="btnjourney" class="btn-journey slide">About me ?</button>
   </div>
 
   <div class="white-square">
@@ -657,7 +685,7 @@
     <div class="square-epitech">
       <h2 class="text-epitech"><span class="text-select">I discovered Epitech</span> because I was looking for a school with a focus on IT and, above all, IT diversity.<br><br> Epitech really appealed to me because it's not part of the classical education system, and allows <span class="text-select">a certain freedom</span> and <span class="text-select">more mature management</span> of one's work schedule.<br><br> <span class="text-select">As a second-year student,</span> I loved my first year and the fact that Epitech doesn't just train you in a programming language, but also in a way of thinking, which makes it easier for you to <span class="text-select">learn other languages.</span></h2>
     </div>
-    <button id="btnFuture" class="btn-journey slide" style="transform: translate(-68.5vw, -5.5vh);">My Future ?</button>
+    <button id="btnFuture" class="btn-future slide">My Future ?</button>
   </div>
 
   <div class="project-square">
