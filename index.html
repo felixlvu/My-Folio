@@ -486,6 +486,9 @@
       left: 0;
       width: auto;
       height: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       z-index: 2;
       border: 3px solid red;
     }
@@ -495,7 +498,6 @@
       width: 24vw;
       height: auto;
       border-radius: 30px;
-      margin-top: -44vh;
       margin-right: 5vw;
       object-fit: cover;
     }
@@ -557,7 +559,6 @@
       font-weight: bold;
       font-family: my-font;
       color: #ffffff;
-      margin-top: 35vh;
       margin-left: 5vw;
     }
 
@@ -596,11 +597,9 @@
       background-color: rgba( 255,255, 255, 0.1); 
       border-radius: 15px;
       padding: 10px;
-      margin-top: 100vh;
       margin-left: 2.5vw;
       overflow: hidden;
       border: none;
-      transform: translate(2.3vw, -33vh);
       backdrop-filter: blur(10px);
     }
     /* White thirds Square */
@@ -677,11 +676,11 @@
 
   <div class="project-square">
     <button id="allproject" class="allProject">
-      <h2 class="text-project" style="width: 12.5vw;">All Projects</h2>
+      <h2 class="text-project" style="width: auto;">All Projects</h2>
       <img src="./src/img/navy.png" class="img-project" style="width: 40vw; margin-left: 5vw; margin-top: 17vh;">
     </button>
     <button id="btn-testable" class="testableProject">
-      <h2 id="testable" class="text-project" style="width: 19vw;">Testable Projects</h2>
+      <h2 id="testable" class="text-project" style="width: auto;">Testable Projects</h2>
       <img src="./src/img/project.png" class="img-term" style="width: 40vw; margin-left: 13vw; margin-top: 17vh;">
     </button>
   </div>
