@@ -299,7 +299,6 @@
     }
 
     .img-epitech {
-      float: right;
       width: 24vw;
       height: auto;
       border-radius: 30px;
@@ -307,21 +306,21 @@
       margin-top: 13vh;
       margin-right: 8vw;
       object-fit: cover;
+      display: inline-block;
     }
   
     
     .square-epitech {
-      float: right;
       width: 55vw;
-      height: 53vh;
+      height: 29vw;
       background-color: rgba( 255,255, 255, 0.1); 
       border-radius: 15px;
       padding: 10px;
-      margin-top: 24vh;
-      margin-right: -3vw;
       overflow: hidden;
       border: none;
       backdrop-filter: blur(10px);
+      display: inline-block;
+      margin-left: 5vw;
     }
 
     .text-epitech {
@@ -344,8 +343,9 @@
       top: 0;
       left: 0;
       width: auto;
-      height: 34vh;
+      height: 34vw;
       z-index: 2;
+      border: 3px solid red;
     }
 
     .allProject {
@@ -359,6 +359,8 @@
       overflow: hidden;
       border: none;
       backdrop-filter: blur(10px);
+      display: inline-block;
+      margin-top: 3.5%;
     }
 
     .testableProject {
@@ -375,6 +377,7 @@
       position: relative;
       transition: 0.3s;
       box-shadow: none;
+      display: inline-block;
     }
   
     .allProject:hover {
@@ -504,8 +507,9 @@
       top: 0;
       left: 0;
       width: auto;
-      height: 100vh;
+      height: 100vw;
       z-index: 2;
+      border: 3px solid red;
     }
 
     .img-cv {
@@ -681,10 +685,10 @@
   </div>
 
   <div class="white-second-square">
-    <img src="./src/img/epitech.png" class="img-epitech">
     <div class="square-epitech">
       <h2 class="text-epitech"><span class="text-select">I discovered Epitech</span> because I was looking for a school with a focus on IT and, above all, IT diversity.<br><br> Epitech really appealed to me because it's not part of the classical education system, and allows <span class="text-select">a certain freedom</span> and <span class="text-select">more mature management</span> of one's work schedule.<br><br> <span class="text-select">As a second-year student,</span> I loved my first year and the fact that Epitech doesn't just train you in a programming language, but also in a way of thinking, which makes it easier for you to <span class="text-select">learn other languages.</span></h2>
     </div>
+      <img src="./src/img/epitech.png" class="img-epitech">
     <button id="btnFuture" class="btn-future slide">My Future ?</button>
   </div>
 
