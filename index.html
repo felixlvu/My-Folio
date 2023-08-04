@@ -95,8 +95,9 @@
       top: 0;
       left: 0;
       width: auto;
-      height: 100vh;
+      height: 100vw;
       z-index: 2;
+      border: 3px solid red;
     }
 
     .rectangle-contact {
@@ -247,8 +248,9 @@
       top: 0;
       left: 0;
       width: auto;
-      height: 100vh;
+      height: 100vw;
       z-index: 2;
+      border: 3px solid red;
     }
     
     .img-me {
@@ -258,18 +260,21 @@
       margin-left: 8vw;
       margin-top: 13vh;
       object-fit: cover;
+      display: inline-block;
     }
 
     .text-about {
+      position: relative;
       top: 0;
       left: 0;
-      width: 65vw;
+      width: 60%;
       font-size: 2.2vw;
       text-align: left;
       font-weight: bold;
+      margin-left: 1vw;
       font-family: my-font;
       color: #ffffff;
-      transform: translate(33vw, -72vh);
+      display: inline-block;
     }
 
     .text-select {
@@ -287,8 +292,10 @@
       top: 0;
       left: 0;
       width: auto;
-      height: 100vh;
+      height: 100vw;
       z-index: 2;
+      border: 3px solid red;
+
     }
 
     .img-epitech {
@@ -618,13 +625,6 @@
     }
     /* White thirds Square */
 
-
-    @media screen and (width: 1920px ) and (height: 1080px) {
-      .text-pos {
-        transform: translate(33vw, -34vh);
-      }
-    }
-
     /* Phone */
 
     @media screen and (max-width: 480px) {
@@ -659,7 +659,7 @@
     }
 
   </style>
-</head>
+</head>      height: 100vw;
 <body>
   <div class="main-black-square">
     <div class="home-image-container">
@@ -677,7 +677,7 @@
 
   <div class="white-square">
     <img src="./src/img/me.jpg" class="img-me">
-    <h2 class="text-about text-pos"><span class="text-select"> since I was young,</span> I've had an unwavering passion for computers and new technologies.<br><br> At first, <span class="text-select">this passion</span> was expressed through video games, but as time went by, I felt the <span class="text-select">need to </span>contribute to their improvement by adding what I felt was missing.<br><br> So I started learning computer languages, and was <span class="text-select">immediately hooked.</span><br> It was then that I knew I wanted to turn this passion<br> into a career.</h2>
+    <h2 class="text-about"><span class="text-select"> since I was young,</span> I've had an unwavering passion for computers and new technologies.<br><br> At first, <span class="text-select">this passion</span> was expressed through video games, but as time went by, I felt the <span class="text-select">need to </span>contribute to their improvement by adding what I felt was missing.<br><br> So I started learning computer languages, and was <span class="text-select">immediately hooked.</span><br> It was then that I knew I wanted to turn this passion<br> into a career.</h2>
   </div>
 
   <div class="white-second-square">
