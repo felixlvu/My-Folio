@@ -188,25 +188,6 @@
       transform: translate(15vw, 50vh);
     }
 
-    .btn-future {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 15vw;
-      height: 8vh;
-      background-color: rgba( 255,255, 255, 0.1); 
-      color:rgba(255, 255, 255, 0.743);
-      display:inline-block;
-      font-size: 1.1vw;
-      border-radius: 15px;
-      padding: 10px;
-      font-family: my-font;
-      font-weight: bold;
-      overflow: hidden;
-      border: none;
-      backdrop-filter: blur(10px);
-      transform: translate(-68.5vw, -5.5vh);
-    }
 
     .btn-journey:focus {
       outline: none;
@@ -250,6 +231,9 @@
       width: auto;
       height: 100vw;
       z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: 3px solid red;
     }
     
@@ -257,8 +241,6 @@
       width: 24vw;
       height: auto;
       border-radius: 30px;
-      margin-left: 8vw;
-      margin-top: 13vh;
       object-fit: cover;
       display: inline-block;
     }
@@ -289,10 +271,9 @@
 
     .white-second-square {
       position: relative;
-      top: 0;
-      left: 0;
-      width: auto;
       height: 100vw;
+      width: auto;
+      display: flex;
       justify-content: center;
       align-items: center;
       z-index: 2;
@@ -304,9 +285,6 @@
       width: 24vw;
       height: auto;
       border-radius: 30px;
-      align-items: right;
-      margin-top: 13vh;
-      margin-right: 8vw;
       object-fit: cover;
       display: inline-block;
     }
@@ -341,8 +319,6 @@
 
     .project-square {
       position: relative;
-      top: 0;
-      left: 0;
       width: auto;
       height: 34vw;
       z-index: 2;
@@ -358,13 +334,11 @@
       background-color: rgba( 255,255, 255, 0.1); 
       border-radius: 15px;
       padding: 10px;
-      transform: translate(0vw, 0vh);
       margin-left: 0.5vw;
       overflow: hidden;
       border: none;
       backdrop-filter: blur(10px);
       display: inline-block;
-      margin-top: 1vh;
     }
 
     .testableProject {
@@ -382,7 +356,6 @@
       transition: 0.3s;
       box-shadow: none;
       display: inline-block;
-      margin-top: 1vh;
     }
   
     .allProject:hover {
@@ -702,7 +675,6 @@
       <h2 class="text-epitech"><span class="text-select">I discovered Epitech</span> because I was looking for a school with a focus on IT and, above all, IT diversity.<br><br> Epitech really appealed to me because it's not part of the classical education system, and allows <span class="text-select">a certain freedom</span> and <span class="text-select">more mature management</span> of one's work schedule.<br><br> <span class="text-select">As a second-year student,</span> I loved my first year and the fact that Epitech doesn't just train you in a programming language, but also in a way of thinking, which makes it easier for you to <span class="text-select">learn other languages.</span></h2>
     </div>
       <img src="./src/img/epitech.png" class="img-epitech">
-    <button id="btnFuture" class="btn-future slide">My Future ?</button>
   </div>
 
   <div class="project-square">
