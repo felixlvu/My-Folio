@@ -388,6 +388,15 @@
       z-index: 1;
       border: 2px solid red;
     }
+
+    .container-small-project {
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 1;
+      border: 2px solid red;
+      display: inline-block;
+    }
   
   </style>
 </head>
@@ -410,14 +419,16 @@
       </div>
     </div>
     <div class="container-project">
-      <button id="btnrpg" class="small-square" style="margin-left: 4vw;">
-        <h2 class="text-project" style="width: auto; text-align: left;">My-RPG</h2>
-        <img src="./src/img/rpg.jpg" class="img-project">
-      </button>
-      <button id="btnepy" class="big-square" style="margin-left: 2vw;">
-        <h2 id="testable" class="text-project" style="text-align: left;">My-Epytodo</h2>
-        <img src="./src/img/epytodo.png" class="img-term">
-      </button>
+      <div class="container-small-project">
+        <button id="btnrpg" class="small-square" style="margin-left: 4vw;">
+          <h2 class="text-project" style="width: auto; text-align: left;">My-RPG</h2>
+          <img src="./src/img/rpg.jpg" class="img-project">
+        </button>
+        <button id="btnepy" class="big-square" style="margin-left: 2vw;">
+          <h2 id="testable" class="text-project" style="text-align: left;">My-Epytodo</h2>
+          <img src="./src/img/epytodo.png" class="img-term">
+        </button>
+      </div>
       <button id="btnfolio" class="big-square" style="margin-left: 4vw; margin-top: 2vw;">
         <h2 id="testable" class="text-project" style="text-align: left;">My-Folio</h2>
         <img src="./src/img/folio.png" class="img-term">
