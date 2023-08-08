@@ -159,7 +159,9 @@
       border: none;
       backdrop-filter: blur(10px);
       display: inline-block;
-
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .arrow-back {
@@ -324,6 +326,18 @@
       bottom: 0;
     }
 
+    .title-project {
+      font-size: 2.3vw;
+      position: absolute;
+      width: auto;
+      font-weight: bold;
+      font-family: my-font;
+      color: rgba(207, 206, 206, 0.8);
+      filter: opacity(0.9);
+      text-decoration: none;
+      transition: text-decoration 0.5s ease;
+    }
+
     /* Project Square */
 
 
@@ -336,37 +350,40 @@
       }
     }
 
-    @media screen and (width: 1920px ) and (height: 1080px) {
-      .text-pos {
-        transform: translate(33vw, -34vh);
-      }
-    }
-    @media screen and (min-width: 320px ) and (min-height: 1080px) {
-      .text-name {
-        transform: translate(0vw, -4.5vh);
-      }
-      .text-present {
-        transform: translate(0vw, -16vh);
-      }
-      .btn-journey {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 28vw;
-        height: 3vh;
-        background-color: rgba( 255,255, 255, 0.1); 
-        color:rgba(255, 255, 255, 0.743);
-        display:inline-block;
-        font-size: 1.1vw;
-        border-radius: 15px;
-        padding: 10px;
-        font-family: my-font;
-        font-weight: bold;
-        overflow: hidden;
-        border: none;
-        backdrop-filter: blur(10px);
+    @media (max-width: 768px) {
+      .title-project {
+        font-size: 7.3vw;
       }
 
+      .btn-back {
+        width: 20vw;
+        height: auto;
+      }
+
+      .bar-top {
+        width: 62vw;
+        margin-left: 3vw;
+      }
+
+      .img-term {
+        width: 48vw;
+        height: auto;
+        border-radius: 10px;
+        margin-left: 5vw;
+        margin-top: 3vh;
+        filter: opacity(0.5);
+        object-fit: cover;
+      }
+
+      .img-project {
+        width: 44vw;
+        height: auto;
+        border-radius: 10px;
+        margin-left: 4.5vw;
+        margin-top: 3.8vh;
+        filter: opacity(0.5);
+        object-fit: cover;
+      }
     }
 
   </style>
@@ -386,7 +403,7 @@
         <i class="fa-solid fa-arrow-left fa-2xl arrow-back" style="transform: translate(-0.1vw, 0vh);"></i>
       </button>
       <div class="bar-top">
-        <h2 class="text-project" style="transform: translate(28vw, -2vh);">Testable Projects</h2>
+        <h2 class="title-project">Testable Projects</h2>
       </div>
     </div>
     <button id="btn42sh" class="small-square" style="margin-left: 4vw;">
