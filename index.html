@@ -95,7 +95,7 @@
       top: 0;
       left: 0;
       width: auto;
-      height: 100vw;
+      height: 55vw;
       z-index: 2;
     }
 
@@ -228,7 +228,7 @@
       top: 0;
       left: 0;
       width: auto;
-      height: 100vw;
+      height: 70vw;
       z-index: 2;
       display: flex;
       align-items: center;
@@ -269,7 +269,7 @@
 
     .white-second-square {
       position: relative;
-      height: 100vw;
+      height: 70vw;
       width: auto;
       display: flex;
       justify-content: center;
@@ -317,7 +317,7 @@
     .project-square {
       position: relative;
       width: auto;
-      height: 34vw;
+      height: 35vw;
       z-index: 2;
       display: flex;
       justify-content: center;
@@ -481,7 +481,7 @@
       top: 0;
       left: 0;
       width: auto;
-      height: 100vw;
+      height: 70vw;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -489,11 +489,9 @@
     }
 
     .img-cv {
-      float: right;
       width: 24vw;
       height: auto;
       border-radius: 30px;
-      margin-right: 5vw;
       object-fit: cover;
     }
 
@@ -558,6 +556,20 @@
       margin-left: 5vw;
     }
 
+    .square-cv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text-cv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
     .btn-dwl {
       float: right;
       position: relative;
@@ -574,6 +586,8 @@
       font-weight: bold;
       overflow: hidden;
       border: none;
+      margin-top: 1.5vh;
+      align-items: center;
       backdrop-filter: blur(10px);
     }
 
@@ -594,6 +608,7 @@
       border-radius: 15px;
       padding: 10px;
       margin-left: 2.5vw;
+      margin-top: 2vw;
       overflow: hidden;
       border: none;
       backdrop-filter: blur(10px);
@@ -658,6 +673,15 @@
         text-align: left;
         margin-left: 1vw;
       }
+      .white-square {
+        height: 100vw;
+      }
+      .white-second-square {
+        height: 100vw;
+      }
+      .project-square {
+        height: 100vw;
+      }
       .img-term {
         width: 40vw;
         height: auto;
@@ -679,8 +703,23 @@
       .square-epitech {
         z-index: 5;
       }
+      .first-page {
+        height: 100vw;
+      }
       .alltextproject {
         margin-top: 1vh;
+      }
+      .btn-dwl {
+        height: 5vw;
+        border-radius: 7px;
+      }
+      .square-used {
+        width: 25vw;
+        height: 10vw;
+      }
+      .img-used {
+        margin-top: 0;
+        margin-left: 0;
       }
     }
 
@@ -725,11 +764,15 @@
   </div>
 
   <div class="white-third-square">
-    <h2 class="text-futur"><span class="text-select">During my school career,</span> I intend to carry out various projects involving languages and themes that are new to me.<br><br> This will give me <span class="text-select">a better understanding</span> of my preferences for the future.<br><br> At the moment, <span class="text-select">JavaScript</span> is the language that fascinates me most, and I'm also <span class="text-select">drawn to the web.</span></h2>
-    <img src="./src/img/CV.jpeg" class="img-cv">
-    <button id="dwlcv" class="btn-dwl slide">Download</button>
-    <div class="square-used">
-      <img src="./src/img/mostused.png" class="img-used">
+    <div class="text-cv">
+      <h2 class="text-futur"><span class="text-select">During my school career,</span> I intend to carry out various projects involving languages and themes that are new to me.<br><br> This will give me <span class="text-select">a better understanding</span> of my preferences for the future.<br><br> At the moment, <span class="text-select">JavaScript</span> is the language that fascinates me most, and I'm also <span class="text-select">drawn to the web.</span></h2>
+      <div class="square-used">
+        <img src="./src/img/mostused.png" class="img-used">
+      </div>
+    </div>
+    <div class="square-cv">
+      <img src="./src/img/CV.jpeg" class="img-cv">
+      <button id="dwlcv" class="btn-dwl slide">Download</button>
     </div>
     <div class="social-square">
       <button id ="btnlinkedin" class="btn-social">
@@ -763,7 +806,7 @@
       scrollButtons.forEach(function(button) {
         button.addEventListener('click', function() {
           window.scrollBy({
-            top: window.innerHeight,
+            top: window.innerHeight + (window.innerHeight / 5),
             behavior: 'smooth'
           });
         });
