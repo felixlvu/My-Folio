@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://unpkg.com/xterm/css/xterm.css" />
   <script src="https://kit.fontawesome.com/60ac64f9c0.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/xterm/lib/xterm.js"></script>
+  <link rel="stylesheet" type="text/css" href="projets-non-testable.css">
   <style>
 
     /* Import font */
@@ -31,242 +32,6 @@
       );
       background-attachment:fixed;
     }
-    
-    /* Main square */
-
-    .main-black-square {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background-color: #000000;
-      filter: blur(80px);
-    }
-
-
-    .home-image-container {
-      position: sticky; 
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      z-index: 0; 
-      overflow: hidden;
-    }
-
-    .home-image {
-      width: 100vw; 
-      height: 100vh;
-      position: sticky; 
-      top: 0;
-      left: 0;
-      z-index: -1; 
-    }
-
-    .light {
-      width: 8vw;
-      height: 12vh;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      z-index: 1; 
-    }
-
-    ::-webkit-scrollbar {
-      width: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: transparent;
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #656565;
-      border-radius: 10px;
-    }
-
-    /* terminal option */
-
-    .terminal-opt {
-      position: absolute;
-      right: 0;
-      top: 0;
-      margin-top: 26vh;
-      margin-right: 4.5vw;
-      width: 45vw;
-      height: 25vw;
-      overflow: hidden;
-      border-radius: 10px;
-      border: 1px solid rgba(105, 105, 105, 0.8);
-    }
-
-    /* bar help */
-
-    .help-containner {
-      display: flex;
-      position: relative;
-      z-index: 5;
-      justify-content: right;
-      margin-right: 4.3vw;
-      transform: translate(0vw, -22vh);
-    }
-
-    .bar-help {
-      width: 21vw;
-      height: 6vh;  
-      background-color: rgba( 255,255, 255, 0.1);
-      border-radius: 15px;
-      padding: 10px;
-      overflow: hidden;
-      border: none;
-      backdrop-filter: blur(10px);
-      display: inline-block;
-    }
-
-    .btn-help {
-      width: 10vw;
-      height: 8.5vh;
-      background-color: rgba( 255,255, 255, 0.1); 
-      border-radius: 15px;
-      margin-left: 1.4vw;
-      padding: 10px;
-      transform: translate(0vw, 0vh);
-      overflow: hidden;
-      border: none;
-      justify-content: center;
-      backdrop-filter: blur(10px);
-      display: inline-block;
-    }
-
-    .btn-help:hover {
-      transition: 0.3s;
-      box-shadow: 0 5px 4px rgba(105, 105, 105, 0.8);
-    }
-
-    /* bar help */
-
-    /* bar */
-
-    .bar-container {
-      display: flex;
-    }
-
-    .btn-back {
-      width: 10vw;
-      height: 8.5vh;
-      background-color: rgba( 255,255, 255, 0.1); 
-      margin-top: 5vh;
-      border-radius: 15px;
-      padding: 10px;
-      transform: translate(0vw, 0vh);
-      overflow: hidden;
-      border: none;
-      justify-content: center;
-      backdrop-filter: blur(10px);
-      display: inline-block;
-    }
-
-    .btn-back:hover {
-      transition: 0.3s;
-      box-shadow: 0 5px 4px rgba(105, 105, 105, 0.8);
-    }
-
-    .btn-back:focus {
-      animation: rotate 0.5s linear infinite;
-    }
-
-    .bar-top {
-      width: 78.7vw;
-      height: 6vh;
-      background-color: rgba( 255,255, 255, 0.1);
-      margin-top: 5vh;
-      margin-left: 1vw;
-      border-radius: 15px;
-      padding: 10px;
-      transform: translate(0vw, 0vh);
-      overflow: hidden;
-      border: none;
-      backdrop-filter: blur(10px);
-      display: inline-block;
-
-    }
-
-    .arrow-back {
-      color:rgba(255, 255, 255, 0.743);
-    }
-
-    /* bar */
-
-    .text-project {
-      font-size: 2.3vw;
-      margin-left: 1vw;
-      position: absolute;
-      top: 0;
-      font-weight: bold;
-      font-family: my-font;
-      color: rgba(207, 206, 206, 0.8);
-      filter: opacity(0.9);
-    }
-
-    .text-container {
-      z-index: 3;
-    }
-
-    .text-about {
-      top: 0;
-      left: 0;
-      font-size: 1.5vw;
-      text-align: left;
-      margin-left: 4vw;
-      margin-top: 12vh;
-      font-weight: bold;
-      font-family: my-font;
-      color: #ffffff;
-      position: relative;
-      z-index: 1;
-    }
-
-    .text-select {
-      background: #ffffff;
-      color: #000000;
-      z-index: 3;
-
-    }
-
-    .square-help {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 90vw;
-      height: 55vh;
-      border: none;
-      z-index: 4;
-      padding: 10px;
-      display: none; 
-      overflow: hidden;
-      margin-left: 4vw;
-      margin-top: 16vh;
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      background-color: rgba( 255,255, 255, 0.1);
-    }
-
-    .video-help {
-      width: 43vw;
-      height: auto;
-      border: none;
-      border-radius: 15px;
-      display: inline-block;
-      margin-top: 3.3vh;
-      margin-left: 1vw;
-    }
 
   </style>
 </head>
@@ -283,7 +48,7 @@
       <i class="fa-solid fa-arrow-left fa-2xl arrow-back" style="transform: translate(-0.1vw, 0vh);"></i>
     </button>
     <div class="bar-top">
-      <h2 class="text-project" style="transform: translate(32vw, -2vh);">BSQ</h2>
+      <h2 class="title-project">BSQ</h2>
     </div>
   </div>
 
@@ -292,20 +57,23 @@
         <h2 class="text-about" style="font-size: 1.3vw; width: 75vw; margin-top: 3vh;">How to use ?<br><br>Generate and Find: ~$ Gen 10 ".....o.." <br>Find biggest Square: Find 1 <br><br>10 is the size of the square and "...o......" is the patherne. The number of map start at 1 and go to 5.</h2>
   </dic>
   
-  <div id="terminal" class="terminal-opt"></div>
-  
-  <div class="help-containner">
-    <div class="bar-help"></div>
-    <button id="githubButton" class="btn-help">
-      <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i>
-    </button>
-    <button id="helpButton" class="btn-help">
-      <i class="fa-solid fa-question fa-2xl arrow-back"></i>
-    </button>
-  </div>
-  <div id="squarehelp" class="square-help">
-    <video src="./src/video/gen.webm" id="helpvideo" class="video-help"></video>
-    <video src="./src/video/find.webm" id="helpvideo" class="video-help"></video>
+  <div class="container-img">
+    <div class="content-wrapper">
+      <div id="terminal" class="terminal-opt"></div>
+      <div class="help-containner">
+        <div class="bar-help"></div>
+        <button id="githubButton" class="btn-help">
+          <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i>
+        </button>
+        <button id="helpButton" class="btn-help">
+          <i class="fa-solid fa-question fa-2xl arrow-back"></i>
+        </button>
+      </div>
+      <div id="squarehelp" class="square-help">
+        <video src="./src/video/gen.webm" id="helpvideo" class="video-help"></video>
+        <video src="./src/video/find.webm" id="helpvideo" class="video-help"></video>
+      </div>
+    </div>
   </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
