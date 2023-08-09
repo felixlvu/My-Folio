@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://unpkg.com/xterm/css/xterm.css" />
   <script src="https://kit.fontawesome.com/60ac64f9c0.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/xterm/lib/xterm.js"></script>
-  <link rel="stylesheet" type="text/css" href="projets-non-testable.css">
+  <link rel="stylesheet" type="text/css" href="projets-page.css">
   <style>
 
     /* Import font */
@@ -57,21 +57,25 @@
   </div>
   <span class="text-select"></span>
   
-  <div class="img-container">
-      <img src="./src/img/snap.png" class="img-snap">
-      <img src="./src/img/snap2.png" class="img-snap">
-      <img src="./src/img/snap3.png" class="img-snap">
+  <div class="container-img">
+    <div class="content-wrapper">
+      <div class="img-container">
+          <img src="./src/img/snap.png" class="img-snap">
+          <img src="./src/img/snap2.png" class="img-snap">
+          <img src="./src/img/snap3.png" class="img-snap">
+      </div>
+      <div class="help-containner" style="bottom: 1vw;">
+        <div class="bar-help"></div>
+        <button id="githubButton" class="btn-help">
+          <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i>
+        </button>
+        <button id="helpButton" class="btn-help">
+          <i class="fa-solid fa-question fa-2xl arrow-back"></i>
+        </button>
+      </div>
+    </div>
   </div>
 
-  <div class="help-containner">
-    <div class="bar-help"></div>
-    <button id="githubButton" class="btn-help">
-      <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i>
-    </button>
-    <button id="helpButton" class="btn-help">
-      <i class="fa-solid fa-question fa-2xl arrow-back"></i>
-    </button>
-  </div>
   <div id="squarehelp" class="square-help">
     <video src="./src/video/42sh.webm" id="helpvideo" class="video-help"></video>
   </div>
