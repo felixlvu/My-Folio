@@ -112,7 +112,6 @@
   justify-content: center;
   backdrop-filter: blur(10px);
   display: inline-block;
-  
 }
 
 .content-wrapper {
@@ -217,6 +216,7 @@
 .text-about {
   top: 0;
   left: 0;
+  width: 45vw;
   font-size: 1.75vw;
   text-align: left;
   margin-left: 4vw;
@@ -255,4 +255,88 @@
   border: none;
   margin-left: 21vw;
   border-radius: 15px;
+}
+.text-use {
+  top: 0;
+  left: 0;
+  text-align: left;
+  margin-left: 4vw;
+  font-weight: bold;
+  font-family: my-font;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  font-size: 1.3vw;
+  width: 75vw;
+  margin-top: 3vh;
+}
+
+@media (max-width: 768px) {
+  .text-about {
+    top: 0;
+    left: 0;
+    width: 92vw;
+    font-size: 4vw;
+    text-align: left;
+    margin-left: 4vw;
+    margin-top: 3vh;
+    font-weight: bold;
+    font-family: my-font;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    border: 2px solid red;
+  }
+  .text-container {
+    position: relative;
+    border: 2px solid red;
+  }
+  .container-img {
+    border: 2px solid blue;
+    position: relative;
+    display: flex;
+    width: 90vw;
+    height: 78vw;
+    left: 4vw;
+  }
+  .text-use {
+    width: 90vw;
+    font-size: 4vw;
+  }
+  .terminal-opt {
+    width: 90vw;
+    height: 55vw;
+  }
+  .btn-help {
+    height: 15vw;
+    width: 15vw;
+    background-color: rgba( 255,255, 255, 0.1); 
+    border-radius: 15px;
+    padding: 10px;
+    margin-left: 1vw; 
+    transform: translate(0vw, 0vh);
+    overflow: hidden;
+    border: none;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    display: inline-block;
+  }
+  .help-containner {
+    bottom: 3vw;
+    width: 80vw;
+    position: absolute;
+    border: 2px solid red;
+  }
+  .bar-help {
+    position: relative;
+    width: 45vw;
+    height: 6vh;
+    bottom: 0;
+    background-color: rgba( 255,255, 255, 0.1);
+    border-radius: 15px;
+    padding: 10px;
+    overflow: hidden;
+    border: none;
+    backdrop-filter: blur(10px);
+  }
 }
