@@ -285,14 +285,11 @@
     color: #ffffff;
     position: relative;
     z-index: 1;
-    border: 2px solid red;
   }
   .text-container {
     position: relative;
-    border: 2px solid red;
   }
   .container-img {
-    border: 2px solid blue;
     position: relative;
     display: flex;
     width: 90vw;
@@ -325,7 +322,6 @@
     bottom: 3vw;
     width: 80vw;
     position: absolute;
-    border: 2px solid red;
   }
   .bar-help {
     position: relative;
